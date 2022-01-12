@@ -8,7 +8,7 @@ module.exports = {
         factory: "0x02C12819f6D6d4bB4070ADa71bf766e84c5DC75d",
     },
     bsc_testnet: {
-        factory: "0x26c149cD1Bc46B6f413c75bb7d138f3d41e18d44",
+        factory: "0x19Eb1f583eEC6572dD9Bc0579523f6Ae16032E0A",
     },
     bsc: {
 
