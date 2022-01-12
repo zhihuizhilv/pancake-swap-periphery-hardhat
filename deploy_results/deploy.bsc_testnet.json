@@ -1,0 +1,14 @@
+{
+  "abi": {},
+  "deployedContract": {
+    "weth": {
+      "address": "0x46e3d0fa047C1c7F612b5fc3677d08BD947d4973",
+      "contractName": "WETH9"
+    },
+    "pancakeRouter": {
+      "address": "0x7CC7588e7e5a2d447c62a418b58F7c3d586F35E3",
+      "contractName": "PancakeRouter01",
+      "factory": "0x26c149cD1Bc46B6f413c75bb7d138f3d41e18d44"
+    }
+  }
+}
