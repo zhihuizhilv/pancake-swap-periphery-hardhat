@@ -21,21 +21,19 @@ async function getPancakeRouter() {
 async function addLiquidity(deployer) {
     let router = await getPancakeRouter();
     let usdt = await ethers.getContractAt("IERC20", deployConfig.USDT);
-    let eth = await ethers.getContractAt("IERC20", deployConfig.ETH);
+    let ttoken = await ethers.getContractAt("IERC20", deployConfig.TToken);
 
     console.log("router:", router.address);
     console.log("factory:", await router.factory());
 
     await usdt.approve(router.address, ETHER1.mul(10000));
-    await eth.approve(router.address, ETHER1.mul(10000));
+    await ttoken.approve(router.address, ETHER1.mul(10000));
 
     console.log("before USDT balance:", ethers.utils.formatEther(await usdt.balanceOf(await deployer.getAddress())));
-    console.log("before ETH balance:", ethers.utils.formatEther(await eth.balanceOf(await deployer.getAddress())));
-    let tx = await router.addLiquidity(usdt.address, eth.address, ETHER1.mul(4000), ETHER1, 0, 0, await deployer.getAddress(), Math.floor(Date.now()/1000)+100);
-    console.log(tx);
-    console.log(await ethers.provider.getTransactionReceipt(tx.hash));
+    console.log("before TToken balance:", ethers.utils.formatEther(await ttoken.balanceOf(await deployer.getAddress())));
+    await(await router.addLiquidity(usdt.address, ttoken.address, ETHER1.mul(4000), ETHER1, 0, 0, await deployer.getAddress(), Math.floor(Date.now()/1000)+100)).wait();
     console.log("end USDT balance:", ethers.utils.formatEther(await usdt.balanceOf(await deployer.getAddress())));
-    console.log("end ETH balance:", ethers.utils.formatEther(await eth.balanceOf(await deployer.getAddress())));
+    console.log("end TToken balance:", ethers.utils.formatEther(await ttoken.balanceOf(await deployer.getAddress())));
 }
 
 
