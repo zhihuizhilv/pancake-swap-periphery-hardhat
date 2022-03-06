@@ -24,7 +24,7 @@ let weth;
 
 async function getContractFactories() {
     WETH9Factory = await ethers.getContractFactory("WETH9");
-    PancakeRouterFactory = await ethers.getContractFactory("PancakeRouter01");
+    PancakeRouterFactory = await ethers.getContractFactory("PancakeRouter");
 }
 
 async function deployContract() {
@@ -48,7 +48,7 @@ async function deployContract() {
     deployResult.writeDeployedContract(
       "pancakeRouter",
       pancakeRouter.address,
-      "PancakeRouter01",
+      "PancakeRouter",
       {
           factory: deployConfig.factory,
           WETH: deployConfig.WETH
@@ -87,27 +87,3 @@ main()
       console.error(error);
       process.exit(1);
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

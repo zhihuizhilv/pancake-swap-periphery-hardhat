@@ -2,12 +2,12 @@
   "abi": {},
   "deployedContract": {
     "weth": {
-      "address": "0x7282581298F976795Fa067FAdC5F5dd04c929141",
+      "address": "0x51545951144936A26d8C4568F660B1F62d31C8C1",
       "contractName": "WETH9"
     },
     "pancakeRouter": {
-      "address": "0x9ec568059470037712C40c11aBeB3815C7A09f89",
-      "contractName": "PancakeRouter01",
+      "address": "0x7ad587386b8CfEc52E37bf702d5117a4E9f4E902",
+      "contractName": "PancakeRouter",
       "factory": "0xe732F4cf7B2615a479Ccaa8A4d603A1b2E0940aB"
     }
   }
